@@ -3,6 +3,7 @@
     {
       "name": "service-3000",
       "cwd": "/vhost/default/htdocs/",
+      "exec_mode": "fork",
       "script": "npm",
       "args": "start -p 3000",
       "instances": 1,
@@ -14,6 +15,7 @@
       "name": "service-3001",
       "cwd": "/vhost/default/htdocs/",
       "script": "npm",
+      "exec_mode": "fork",
       "args": "start -p 3001",
       "instances": 1,
       "autorestart": true,
