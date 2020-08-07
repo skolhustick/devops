@@ -1,0 +1,22 @@
+upstream loadbalancer {
+        server localhost:3000;
+        server localhost:3001;
+}
+
+server {
+        listen 80 default_server;
+
+        server_name localhost;
+
+        access_log  /dev/null;
+        error_log   /dev/null;
+
+        location / {
+                proxy_pass http://loadbalancer;
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+        }
+}
