@@ -1,0 +1,24 @@
+{
+  "apps": [
+    {
+      "name": "service-3000",
+      "cwd": "/vhost/default/htdocs/",
+      "script": "npm",
+      "args": "start -p 3000",
+      "instances": 1,
+      "autorestart": true,
+      "watch": false,
+      "max_memory_restart": "256M"
+    },
+    {
+      "name": "service-3001",
+      "cwd": "/vhost/default/htdocs/",
+      "script": "npm",
+      "args": "start -p 3001",
+      "instances": 1,
+      "autorestart": true,
+      "watch": false,
+      "max_memory_restart": "256M"
+    }
+  ]
+}
